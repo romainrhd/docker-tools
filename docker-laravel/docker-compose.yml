@@ -13,7 +13,7 @@ services:
                 MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
                 volumes:
                     - './db:/var/lib/mysql'
-                    healthcheck:
-                        test: [ "CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}" ]
-                        retries: 3
-                        timeout: 5s
+                healthcheck:
+                    test: [ "CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}" ]
+                    retries: 3
+                    timeout: 5s
